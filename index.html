@@ -305,8 +305,7 @@
             <div class="image-slot">Image coming soon</div>
 
             <h1>Custom hand-knit<br>basketball jerseys</h1>
-            <p class="subtitle">One-of-one jerseys, knit by hand in New York.<br>Join the waitlist and I'll reach out when your slot opens.</p>
-            <p class="lead-time">≈ 2 months from commission to finish</p>
+            <p class="subtitle">One-of-one jerseys, knit by hand in New York.<br>Join the waitlist and we'll reach out when a slot opens.</p>
 
             <form
                 name="waitlist"
@@ -324,10 +323,8 @@
                 <button type="submit">Join Waitlist</button>
             </form>
 
-            <p class="form-note" id="formNote">No spam. Just a note when a commission slot opens.</p>
-
             <div class="success-message" id="successMessage">
-                You're on the list. I'll be in touch when a commission slot opens up.
+                You're on the list. We'll be in touch when a commission slot opens up.
             </div>
         </div>
     </main>
@@ -339,7 +336,6 @@
     <script>
         const form = document.getElementById('waitlistForm');
         const success = document.getElementById('successMessage');
-        const note = document.getElementById('formNote');
 
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
@@ -351,7 +347,6 @@
                     body: new URLSearchParams(data).toString()
                 });
                 form.style.display = 'none';
-                note.style.display = 'none';
                 success.classList.add('visible');
             } catch (err) {
                 form.submit();
