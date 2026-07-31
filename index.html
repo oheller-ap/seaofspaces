@@ -243,16 +243,7 @@
 
     <main>
         <div class="hero-content">
-            <div class="rotator" id="rotator">
-                <div class="slide active" style="background-image: url('images/IMG_4693.jpeg')"></div>
-                <div class="slide" style="background-image: url('images/IMG_4697.jpeg')"></div>
-                <div class="slide" style="background-image: url('images/IMG_4698.jpeg')"></div>
-                <div class="slide" style="background-image: url('images/IMG_4972.jpeg')"></div>
-                <div class="slide" style="background-image: url('images/IMG_4973.jpeg')"></div>
-                <div class="slide" style="background-image: url('images/IMG_4984.jpeg')"></div>
-                <div class="slide" style="background-image: url('images/IMG_4988.jpeg')"></div>
-                <div class="slide" style="background-image: url('images/IMG_4992.jpeg')"></div>
-            </div>
+            <div class="rotator" id="rotator"></div>
 
             <h1>Custom hand-knit<br>basketball jerseys</h1>
             <p class="subtitle">One-of-one jerseys, knit by hand in New York.<br>Join the waitlist and we'll reach out.</p>
@@ -284,14 +275,22 @@
     </footer>
 
     <script>
-        // Image rotator
-        const slides = document.querySelectorAll('#rotator .slide');
-        let currentSlide = 0;
-        setInterval(() => {
-            slides[currentSlide].classList.remove('active');
-            currentSlide = (currentSlide + 1) % slides.length;
-            slides[currentSlide].classList.add('active');
-        }, 4500);
+        // Pick one image at random per page load
+        const images = [
+            'IMG_4693.jpeg',
+            'IMG_4697.jpeg',
+            'IMG_4698.jpeg',
+            'IMG_4972.jpeg',
+            'IMG_4973.jpeg',
+            'IMG_4984.jpeg',
+            'IMG_4988.jpeg',
+            'IMG_4992.jpeg'
+        ];
+        const pick = images[Math.floor(Math.random() * images.length)];
+        const rotator = document.getElementById('rotator');
+        rotator.style.backgroundImage = `url('images/${pick}')`;
+        rotator.style.backgroundSize = 'cover';
+        rotator.style.backgroundPosition = 'center';
 
         // Waitlist form
         const form = document.getElementById('waitlistForm');
