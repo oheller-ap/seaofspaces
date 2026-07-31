@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sea of Spaces — Handcrafted Knitwear</title>
+    <title>Charlotte Heller — Custom Hand-Knit Basketball Jerseys</title>
+    <meta name="description" content="Join the waitlist for a custom hand-knit basketball jersey by Charlotte Heller. Made to order in New York.">
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -28,116 +29,56 @@
             color: var(--charcoal);
             line-height: 1.6;
             overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
 
         /* Navigation */
         nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
             padding: 2rem 4rem;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
-            z-index: 1000;
-            background: linear-gradient(to bottom, var(--cream) 0%, rgba(250, 248, 243, 0.95) 80%, transparent 100%);
-            animation: navSlideDown 0.8s ease-out;
+            animation: fadeIn 0.8s ease-out;
         }
 
-        @keyframes navSlideDown {
-            from {
-                transform: translateY(-100%);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         .logo {
             font-family: 'Crimson Pro', serif;
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             font-weight: 300;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.15em;
             color: var(--navy);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 3rem;
-            list-style: none;
-            align-items: center;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--charcoal);
-            font-size: 0.95rem;
-            font-weight: 400;
-            letter-spacing: 0.03em;
-            position: relative;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 1px;
-            background: var(--sage);
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        .nav-links a:hover {
-            color: var(--sage);
-        }
-
-        .nav-cta {
-            background: var(--navy);
-            color: var(--soft-white) !important;
-            padding: 0.6rem 1.3rem;
-            border-radius: 50px;
-            font-size: 0.85rem !important;
-            letter-spacing: 0.08em;
             text-transform: uppercase;
-            transition: background 0.3s ease, transform 0.3s ease;
         }
 
-        .nav-cta::after { display: none; }
-
-        .nav-cta:hover {
-            background: var(--sage);
-            color: var(--soft-white) !important;
-            transform: translateY(-1px);
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 100vh;
+        /* Hero */
+        main {
+            flex: 1;
             display: flex;
             align-items: center;
             justify-content: center;
+            padding: 4rem 2rem;
             position: relative;
             overflow: hidden;
         }
 
         .hero-content {
+            max-width: 640px;
             text-align: center;
             z-index: 2;
-            animation: fadeInUp 1.2s ease-out 0.3s both;
+            animation: fadeInUp 1s ease-out 0.2s both;
         }
 
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(40px);
+                transform: translateY(30px);
             }
             to {
                 opacity: 1;
@@ -145,555 +86,276 @@
             }
         }
 
-        .hero h1 {
+        h1 {
             font-family: 'Crimson Pro', serif;
-            font-size: 5rem;
+            font-size: 3.4rem;
             font-weight: 300;
-            letter-spacing: 0.08em;
+            letter-spacing: 0.02em;
             color: var(--navy);
-            margin-bottom: 1rem;
-            line-height: 1.1;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
         }
 
-        .hero .tagline {
+        .subtitle {
             font-size: 1.1rem;
-            letter-spacing: 0.15em;
-            color: var(--sage);
-            font-weight: 300;
-            text-transform: lowercase;
-            margin-bottom: 2.5rem;
-        }
-
-        .hero-note {
-            font-size: 0.85rem;
-            letter-spacing: 0.08em;
+            line-height: 1.7;
             color: var(--charcoal);
-            opacity: 0.65;
-            margin-top: 1.25rem;
             font-weight: 300;
+            margin-bottom: 1rem;
+            opacity: 0.85;
         }
 
-        .hero-note a {
-            color: var(--navy);
-            text-decoration: none;
-            border-bottom: 1px solid var(--sage);
-            padding-bottom: 1px;
+        .lead-time {
+            font-size: 0.85rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--sage);
+            margin-bottom: 3rem;
+            font-weight: 500;
         }
 
-        .hero-cta {
-            display: inline-flex;
+        /* Image slot */
+        .image-slot {
+            width: 100%;
+            max-width: 380px;
+            aspect-ratio: 4/5;
+            margin: 0 auto 3rem;
+            background: linear-gradient(135deg, var(--blush) 0%, var(--mint) 100%);
+            opacity: 0.35;
+            border-radius: 4px;
+            display: flex;
             align-items: center;
-            gap: 0.6rem;
+            justify-content: center;
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--navy);
+        }
+
+        /* Waitlist Form */
+        .waitlist-form {
+            display: flex;
+            gap: 0.75rem;
+            max-width: 480px;
+            margin: 0 auto 1rem;
+        }
+
+        .waitlist-form input[type="email"] {
+            flex: 1;
+            padding: 0.95rem 1.4rem;
+            border: 1.5px solid var(--sage);
+            border-radius: 50px;
+            background: var(--soft-white);
+            font-family: 'Jost', sans-serif;
+            font-size: 1rem;
+            color: var(--charcoal);
+            outline: none;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            min-width: 0;
+        }
+
+        .waitlist-form input[type="email"]:focus {
+            border-color: var(--navy);
+            box-shadow: 0 0 0 4px rgba(168, 181, 160, 0.15);
+        }
+
+        .waitlist-form input[type="email"]::placeholder {
+            color: var(--charcoal);
+            opacity: 0.45;
+        }
+
+        .waitlist-form button {
+            padding: 0.95rem 1.8rem;
             background: var(--navy);
             color: var(--soft-white);
-            text-decoration: none;
-            padding: 1rem 2.2rem;
+            border: none;
             border-radius: 50px;
-            font-size: 0.95rem;
-            letter-spacing: 0.08em;
+            font-family: 'Jost', sans-serif;
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
             text-transform: uppercase;
-            transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+            white-space: nowrap;
         }
 
-        .hero-cta:hover {
+        .waitlist-form button:hover {
             background: var(--sage);
-            transform: translateY(-2px);
-            box-shadow: 0 12px 24px rgba(168, 181, 160, 0.3);
+            transform: translateY(-1px);
         }
 
+        .waitlist-form button:active {
+            transform: translateY(0);
+        }
+
+        .honeypot {
+            position: absolute;
+            left: -9999px;
+        }
+
+        .form-note {
+            font-size: 0.8rem;
+            color: var(--charcoal);
+            opacity: 0.55;
+            letter-spacing: 0.03em;
+        }
+
+        .success-message {
+            display: none;
+            padding: 1.5rem 2rem;
+            background: rgba(168, 181, 160, 0.15);
+            border-radius: 12px;
+            color: var(--navy);
+            font-size: 1rem;
+            line-height: 1.6;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        .success-message.visible {
+            display: block;
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        /* Footer */
+        footer {
+            padding: 2rem 4rem;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--sage);
+            letter-spacing: 0.08em;
+        }
+
+        footer a {
+            color: var(--sage);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+
+        footer a:hover {
+            border-bottom-color: var(--sage);
+        }
+
+        /* Ambient shapes */
         .floating-shapes {
             position: absolute;
-            width: 100%;
-            height: 100%;
+            inset: 0;
             pointer-events: none;
+            z-index: 1;
         }
 
         .shape {
             position: absolute;
             border-radius: 50%;
-            opacity: 0.15;
-            animation: float 20s infinite ease-in-out;
+            opacity: 0.12;
+            animation: float 24s infinite ease-in-out;
         }
 
         .shape-1 {
-            width: 300px;
-            height: 300px;
+            width: 320px;
+            height: 320px;
             background: var(--mint);
-            top: 10%;
-            left: 15%;
-            animation-delay: 0s;
+            top: -80px;
+            left: -80px;
         }
 
         .shape-2 {
-            width: 200px;
-            height: 200px;
+            width: 240px;
+            height: 240px;
             background: var(--blush);
-            bottom: 15%;
-            right: 20%;
-            animation-delay: 5s;
-        }
-
-        .shape-3 {
-            width: 150px;
-            height: 150px;
-            background: var(--sage);
-            top: 60%;
-            left: 70%;
-            animation-delay: 10s;
+            bottom: -60px;
+            right: -60px;
+            animation-delay: 8s;
         }
 
         @keyframes float {
-            0%, 100% {
-                transform: translate(0, 0) scale(1);
-            }
-            33% {
-                transform: translate(30px, -30px) scale(1.1);
-            }
-            66% {
-                transform: translate(-20px, 20px) scale(0.9);
-            }
-        }
-
-        /* Gallery Section */
-        .gallery {
-            padding: 8rem 4rem;
-            background: var(--soft-white);
-        }
-
-        .section-title {
-            font-family: 'Crimson Pro', serif;
-            font-size: 3rem;
-            font-weight: 300;
-            text-align: center;
-            margin-bottom: 1rem;
-            letter-spacing: 0.05em;
-            color: var(--navy);
-        }
-
-        .section-subtitle {
-            text-align: center;
-            font-size: 0.9rem;
-            letter-spacing: 0.1em;
-            color: var(--sage);
-            text-transform: uppercase;
-            margin-bottom: 4rem;
-            font-weight: 400;
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .gallery-item {
-            aspect-ratio: 4/5;
-            background: var(--cream);
-            border-radius: 4px;
-            overflow: hidden;
-            position: relative;
-            cursor: pointer;
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-        }
-
-        .gallery-item:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-        }
-
-        .gallery-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(to bottom, transparent 60%, rgba(168, 181, 160, 0.3) 100%);
-            opacity: 0;
-            transition: opacity 0.4s ease;
-            z-index: 1;
-        }
-
-        .gallery-item:hover::before {
-            opacity: 1;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s ease;
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.05);
-        }
-
-        .status-badge {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            z-index: 3;
-            font-size: 0.7rem;
-            font-weight: 500;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            padding: 0.4rem 0.8rem;
-            border-radius: 50px;
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-        }
-
-        .status-available {
-            background: rgba(168, 181, 160, 0.9);
-            color: var(--soft-white);
-        }
-
-        .status-sold {
-            background: rgba(58, 58, 58, 0.85);
-            color: var(--soft-white);
-        }
-
-        .gallery-item.sold {
-            opacity: 0.75;
-        }
-
-        .gallery-item.sold:hover {
-            transform: translateY(-4px);
-        }
-
-        .product-info {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 2rem;
-            background: linear-gradient(to top, rgba(250, 248, 243, 0.98) 0%, rgba(250, 248, 243, 0.95) 70%, transparent 100%);
-            transform: translateY(100%);
-            transition: transform 0.4s ease;
-            z-index: 2;
-        }
-
-        .gallery-item:hover .product-info {
-            transform: translateY(0);
-        }
-
-        .product-title {
-            font-family: 'Crimson Pro', serif;
-            font-size: 1.4rem;
-            color: var(--navy);
-            margin-bottom: 0.5rem;
-        }
-
-        .product-price {
-            font-size: 1.3rem;
-            font-weight: 500;
-            color: var(--sage);
-            margin-bottom: 0.5rem;
-        }
-
-        .product-desc {
-            font-size: 0.85rem;
-            color: var(--charcoal);
-            line-height: 1.4;
-            margin-bottom: 1rem;
-            opacity: 0.8;
-        }
-
-        .view-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            font-size: 0.85rem;
-            color: var(--soft-white);
-            background: var(--navy);
-            text-decoration: none;
-            padding: 0.55rem 1.2rem;
-            border-radius: 20px;
-            transition: all 0.3s ease;
-            letter-spacing: 0.04em;
-        }
-
-        .view-link:hover {
-            background: var(--sage);
-            transform: translateY(-1px);
-        }
-
-        .view-link.sold {
-            background: transparent;
-            color: var(--charcoal);
-            border: 1px solid var(--charcoal);
-            opacity: 0.7;
-            pointer-events: none;
-        }
-
-        .depop-mark {
-            font-weight: 600;
-            letter-spacing: 0.06em;
-        }
-
-        /* About Section */
-        .about {
-            padding: 8rem 4rem;
-            background: var(--cream);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .about-content {
-            max-width: 800px;
-            text-align: center;
-        }
-
-        .about-content p {
-            font-size: 1.2rem;
-            line-height: 2;
-            color: var(--charcoal);
-            font-weight: 300;
-            margin-bottom: 2rem;
-        }
-
-        .about-content .signature {
-            font-family: 'Crimson Pro', serif;
-            font-size: 1.5rem;
-            color: var(--sage);
-            margin-top: 3rem;
-        }
-
-        /* Contact Section */
-        .contact {
-            padding: 8rem 4rem;
-            background: var(--soft-white);
-            text-align: center;
-        }
-
-        .contact-handles {
-            margin-top: 1.5rem;
-            font-size: 0.95rem;
-            color: var(--charcoal);
-            opacity: 0.75;
-            letter-spacing: 0.04em;
-        }
-
-        .contact-handles span {
-            color: var(--sage);
-            font-weight: 500;
-        }
-
-        .contact-links {
-            display: flex;
-            gap: 3rem;
-            justify-content: center;
-            margin-top: 3rem;
-        }
-
-        .contact-link {
-            font-size: 1.1rem;
-            text-decoration: none;
-            color: var(--charcoal);
-            padding: 1rem 2.5rem;
-            border: 1.5px solid var(--sage);
-            border-radius: 50px;
-            transition: all 0.3s ease;
-            letter-spacing: 0.05em;
-        }
-
-        .contact-link:hover {
-            background: var(--sage);
-            color: var(--soft-white);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(168, 181, 160, 0.2);
-        }
-
-        /* Footer */
-        footer {
-            padding: 3rem 4rem;
-            background: var(--cream);
-            text-align: center;
-            font-size: 0.9rem;
-            color: var(--sage);
-            letter-spacing: 0.05em;
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(30px, -20px) scale(1.05); }
         }
 
         /* Responsive */
-        @media (max-width: 768px) {
-            nav {
-                padding: 1.5rem 1.5rem;
-            }
-
-            .nav-links {
-                gap: 1rem;
-            }
-
-            .nav-cta {
-                padding: 0.5rem 1rem;
-                font-size: 0.75rem !important;
-            }
-
-            .hero h1 {
-                font-size: 3rem;
-            }
-
-            .gallery-grid {
-                grid-template-columns: 1fr;
-                padding: 0 1rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .contact-links {
+        @media (max-width: 640px) {
+            nav { padding: 1.5rem 1.5rem; }
+            main { padding: 2rem 1.5rem; }
+            h1 { font-size: 2.2rem; }
+            .subtitle { font-size: 1rem; }
+            .waitlist-form {
                 flex-direction: column;
-                align-items: center;
             }
-        }
-
-        /* Scroll Animation */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
+            .waitlist-form button {
+                width: 100%;
+            }
+            footer { padding: 2rem 1.5rem; }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
     <nav>
-        <div class="logo">Sea of Spaces</div>
-        <ul class="nav-links">
-            <li><a href="#gallery">Shop</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="https://www.depop.com/chheller/" target="_blank" rel="noopener" class="nav-cta">Shop on Depop</a></li>
-        </ul>
+        <div class="logo">Charlotte Heller</div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
+    <main>
         <div class="floating-shapes">
             <div class="shape shape-1"></div>
             <div class="shape shape-2"></div>
-            <div class="shape shape-3"></div>
         </div>
+
         <div class="hero-content">
-            <h1>Sea of Spaces</h1>
-            <p class="tagline">handcrafted knitwear</p>
-            <a href="https://www.depop.com/chheller/" target="_blank" rel="noopener" class="hero-cta">Shop on Depop →</a>
-            <p class="hero-note">All pieces sold through <a href="https://www.depop.com/chheller/" target="_blank" rel="noopener">@chheller</a> on Depop</p>
-        </div>
-    </section>
+            <div class="image-slot">Image coming soon</div>
 
-    <!-- Gallery Section -->
-    <section id="gallery" class="gallery">
-        <h2 class="section-title fade-in">Collection</h2>
-        <p class="section-subtitle fade-in">Tap any piece to buy on Depop</p>
-        <div class="gallery-grid">
-            <div class="gallery-item fade-in">
-                <span class="status-badge status-available">Available</span>
-                <img src="https://media-photos.depop.com/b1/30838979/2709728148_a921215f672748ffb82886005a93fe7d/P0.jpg" alt="Speckled Mauve Filet Crochet Scarf" loading="lazy">
-                <div class="product-info">
-                    <div class="product-title">Speckled Mauve Scarf</div>
-                    <div class="product-price">$70.00</div>
-                    <div class="product-desc">Filet crochet scarf in warm, squishy alpaca-merino wool. Inspired by Miu Miu FW21. 5" wide × 52" long.</div>
-                    <a href="https://www.depop.com/products/chheller-filet-crochet-scarf-made-of/" target="_blank" rel="noopener" class="view-link">Buy on <span class="depop-mark">Depop</span> →</a>
-                </div>
-            </div>
-            <div class="gallery-item fade-in">
-                <span class="status-badge status-available">Available</span>
-                <img src="https://media-photos.depop.com/b0/30838979/1191484402_56288444110d41b48a44bcaae1d40ce4/P0.jpg" alt="White & Cream Filet Crochet Scarf" loading="lazy">
-                <div class="product-info">
-                    <div class="product-title">Ecru Lace Scarf</div>
-                    <div class="product-price">$70.00</div>
-                    <div class="product-desc">Filet crochet scarf in warm, squishy off-white alpaca-merino wool. Inspired by Miu Miu FW21. 5" wide × 52" long.</div>
-                    <a href="https://www.depop.com/products/chheller-filet-crochet-scarf-in-warm-2c4d/" target="_blank" rel="noopener" class="view-link">Buy on <span class="depop-mark">Depop</span> →</a>
-                </div>
-            </div>
-            <div class="gallery-item fade-in">
-                <span class="status-badge status-available">Available</span>
-                <img src="https://media-photos.depop.com/b0/30838979/1082890906_aa018f1c5fc44d06be3ceec396eb360f/P0.jpg" alt="Orange Lace Crochet Headband" loading="lazy">
-                <div class="product-info">
-                    <div class="product-title">Orange Lace Headband</div>
-                    <div class="product-price">$12.00</div>
-                    <div class="product-desc">Handmade in fantail lace pattern with acrylic blend yarn. 2.75" wide × 9" long, slightly stretchy.</div>
-                    <a href="https://www.depop.com/products/chheller-orange-crochet-wide-headband-handmade/" target="_blank" rel="noopener" class="view-link">Buy on <span class="depop-mark">Depop</span> →</a>
-                </div>
-            </div>
-            <div class="gallery-item fade-in">
-                <span class="status-badge status-available">Available</span>
-                <img src="https://media-photos.depop.com/b0/30838979/1281226747_978a9ce9712e4e23bd60e1fb12cce23a/P0.jpg" alt="Pink & Green Checker Mini Purse" loading="lazy">
-                <div class="product-info">
-                    <div class="product-title">Checker Mini Purse</div>
-                    <div class="product-price">$30.00</div>
-                    <div class="product-desc">Pink & green checker on one side, solid green on the other. 7"W × 4"H, 15" strap. Made from deadstock yarn.</div>
-                    <a href="https://www.depop.com/products/chheller-crochet-mini-top-handle-bag/" target="_blank" rel="noopener" class="view-link">Buy on <span class="depop-mark">Depop</span> →</a>
-                </div>
+            <h1>Custom hand-knit<br>basketball jerseys</h1>
+            <p class="subtitle">One-of-one jerseys, knit by hand in New York.<br>Join the waitlist and I'll reach out when your slot opens.</p>
+            <p class="lead-time">≈ 2 months from commission to finish</p>
+
+            <form
+                name="waitlist"
+                method="POST"
+                data-netlify="true"
+                netlify-honeypot="bot-field"
+                class="waitlist-form"
+                id="waitlistForm"
+            >
+                <input type="hidden" name="form-name" value="waitlist">
+                <p class="honeypot">
+                    <label>Don't fill this out: <input name="bot-field"></label>
+                </p>
+                <input type="email" name="email" placeholder="your@email.com" required>
+                <button type="submit">Join Waitlist</button>
+            </form>
+
+            <p class="form-note" id="formNote">No spam. Just a note when a commission slot opens.</p>
+
+            <div class="success-message" id="successMessage">
+                You're on the list. I'll be in touch when a commission slot opens up.
             </div>
         </div>
-    </section>
+    </main>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="about-content fade-in">
-            <h2 class="section-title">About</h2>
-            <p>
-                Knit by hand in New York from natural fibers.
-            </p>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <h2 class="section-title fade-in">Get in Touch</h2>
-        <p class="contact-handles fade-in">Find me at <span>@seaofspaces</span> on Instagram and <span>@chheller</span> on Depop</p>
-        <div class="contact-links fade-in">
-            <a href="https://www.instagram.com/seaofspaces/" target="_blank" rel="noopener" class="contact-link">Instagram</a>
-            <a href="https://www.depop.com/chheller/" target="_blank" rel="noopener" class="contact-link">Shop on Depop</a>
-        </div>
-    </section>
-
-    <!-- Footer -->
     <footer>
-        <p>© 2026 Sea of Spaces. Handcrafted with care in NYC.</p>
+        <p>© 2026 Charlotte Heller · <a href="https://www.instagram.com/seaofspaces/" target="_blank" rel="noopener">Instagram</a></p>
     </footer>
 
     <script>
-        // Scroll Animation Observer
-        const fadeElements = document.querySelectorAll('.fade-in');
+        const form = document.getElementById('waitlistForm');
+        const success = document.getElementById('successMessage');
+        const note = document.getElementById('formNote');
 
-        const fadeObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        });
-
-        fadeElements.forEach(el => fadeObserver.observe(el));
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const data = new FormData(form);
+            try {
+                await fetch('/', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: new URLSearchParams(data).toString()
+                });
+                form.style.display = 'none';
+                note.style.display = 'none';
+                success.classList.add('visible');
+            } catch (err) {
+                form.submit();
+            }
         });
     </script>
 </body>
